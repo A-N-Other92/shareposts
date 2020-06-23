@@ -12,16 +12,13 @@
     <div class="card card-body mb-3">
       <h4 class="card-title"><?php echo $post->title; ?></h4>
       <div class="bg-light p-2 mb-3">
-      <!--  Written by <?php echo $post->name; ?> on <?php echo date_format(new DateTime($post->created_at),"jS M y  :  g i a");  ?> -->
-       Written by <?php echo $post->name; ?> on <?php echo date_format(new DateTime($post->postCreatedAt),"jS M y  :  g i a");  ?>
+        Written by <?php echo $post->name; ?> on <?php echo date_format(new DateTime($post->postCreatedAt),"jS M y  :  g i a");  ?>
       </div>
-<!--      <p class="card-text"><?php echo $post->body; ?></p>  The original code -->
         <p class="card-text"><?php if(strlen($post->body) > 200) {
                  echo substr($post->body,0,250) . ' ............'; } 
              else { 
                  echo $post->body; 
              }  ?></p>
-    <!--  <a class="btn btn-dark" href="<?php echo URLROOT; ?>/posts/show/<?php echo $post->postId; ?>">More</a> -->
           <a class="btn btn-dark" href="<?php echo URLROOT; ?>/posts/show/<?php echo $post->postId; ?>/<?php echo $data['pageStart']; ?>">More</a>
     </div>
   <?php endforeach; ?>

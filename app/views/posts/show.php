@@ -1,6 +1,5 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 <?php flash('post_message'); ?>
-<!--  <a href="<?php echo URLROOT; ?>/<?php echo $data['pageStart']; ?>" class="btn btn-light mb-3"><i class="fa fa-backward" aria-hidden="true"></i> Back</a> -->
     <a href="<?php echo URLROOT; ?>/posts/<?php echo $data['pageStart']; ?>" class="btn btn-light mb-3"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
   <br>
   <h1><?php echo $data['post']->title; ?></h1>
@@ -10,7 +9,6 @@
   <p><?php echo $data['post']->body; ?></p>
   <?php if($data['post']->user_id == $_SESSION['user_id']) : ?>
     <hr>
-   <!-- <a class="btn btn-dark" href="<?php echo URLROOT; ?>/posts/edit/<?php echo $data['post']->id; ?>">Edit</a> -->
     <a class="btn btn-dark" href="<?php echo URLROOT; ?>/posts/edit/<?php echo $data['post']->id . '/' . $data['pageStart'] ; ?>">Edit</a>
     <form class="pull-right" action="<?php echo URLROOT; ?>/posts/delete/<?php echo $data['post']->id; ?>" method="post">
       <input type="submit" class="btn btn-danger" value="Delete">
