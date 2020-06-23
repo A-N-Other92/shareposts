@@ -167,7 +167,6 @@
         // Check user as verified by their email account    
         $verifyEmail = $this->userModel->verifyEmail($data['email']); 
         if(isset($verifyEmail)) {
-         // print_r($verifyEmail);die();
            if($verifyEmail->email_verified == 'y'){
              // User verified by email
            } else if($verifyEmail->email_verified == 'n') {
